@@ -9,7 +9,7 @@ rm -rf /usr/share/nginx/html/*
 echo -e "\e[35mdownloading frontend content\e[0m"
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
 
-echo-e "\e[extracting downloaded frontend\e[0m"
+echo -e "\e[extracting downloaded frontend\e[0m"
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 
@@ -18,7 +18,7 @@ cp ${code_dir}/configs/nginx-roboshop.conf /etc/nginx/deafult.d/roboshop.conf
 
 echo -e "\e[35menable nginx\e[0m"
 systemctl enable nginx
-
+    
 echo -e "\e[35mstartnginx\e[0m"
 systemctl restart nginx
 
