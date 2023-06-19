@@ -1,4 +1,5 @@
 code_dir=$(pwd)
+
 echo -e "\e[35minstalling nginx\e[0m"
 yum install nginx -y
 
