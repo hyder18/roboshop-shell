@@ -17,7 +17,7 @@ rm -rf /app* &>>${log_file}
 
 print_head "downloading app content"
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>${log_file}
-
+cd /app
 
 
 print_head "extracting app content"
@@ -26,7 +26,7 @@ unzip /tmp/catalogue.zip &>>${log_file}
 print_head "installing nodejs dependencies"
 npm install &>>${log_file}
 
-print_head "copying systemd service file"
+print_head "copying systemD service file"
 cp ${code_dir}/configs/catalogue.service /etc/systemd/system/catalogue.service &>>${log_file}
 
 print_head "reload systemd"
