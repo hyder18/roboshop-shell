@@ -6,7 +6,7 @@ curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log_file}
 print_head "installing nodejs"
 yum install nodejs -y &>>${log_file}
 
-print_head "create rooshop user"
+print_head "create robshop user"
 useradd roboshop &>>${log_file}
 
 print_head "create application directory"
@@ -36,7 +36,7 @@ print_head "enabling catalogue"
 systemctl enable catalogue &>>${log_file}
 
 print_head "start catalogue"
-systemctl start catalogue &>>${log_file}
+systemctl restart catalogue &>>${log_file}
 
 print_head "copying mongodb repo file"
 cp ${code_dir}/configs/mongodb.repo /etc/yum.repos.d/mongo.repo &>>${log_file}
