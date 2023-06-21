@@ -46,5 +46,5 @@ print_head "install mongo client"
 yum install mongodb-org-shell -y &>>${log_file}
 
 print_head "load schema"
-mongo --host mongodb.hyder71.online </app/schema/catalogue.js &>>${log_file}
+mongo --host mongodb-dev.hyder71.online </app/schema/catalogue.js &>>${log_file}
 
