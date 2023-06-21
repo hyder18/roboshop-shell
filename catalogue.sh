@@ -44,5 +44,3 @@ cp ${code_dir}/configs/mongodb.repo /etc/yum.repos.d/mongo.repo &>>${log_file}
 print_head "install mongo client"
 yum install mongodb-org-shell -y &>>${log_file}
 
-print_head "load schema"
-mongo --host mongodb.hyder71.online </app/schema/catalogue.js &>>${log_file}
