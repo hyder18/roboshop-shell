@@ -30,5 +30,5 @@ systemctl enable nginx &>>${log_file}
 echo $?
 
 print_head "starting nginx"
-systemctl restart nginx &>>${log_file}
+systemctl start nginx &>>${log_file}
 echo $?
