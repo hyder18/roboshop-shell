@@ -21,7 +21,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>>${log_file}
 echo $?
 
-print_head "copying nginx congif for roboshop"
+print_head "copying nginx config for roboshop"
 cp ${code_dir}/configs/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${log_file}
 echo $?
 
