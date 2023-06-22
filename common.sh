@@ -16,6 +16,21 @@ status_check() {
   fi
 }
 
+schema_setup() {
+  print_head "copy mongodb repo file"
+    cp ${code_dir}/configs/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${log_file}
+    status_check $?
+
+    print_head "install mongo client"
+    yum install mongodb-org-shell -y &>>${log_file}
+    status_check $?
+
+    print_head "load schema"
+    mongo --host mongodb-dev.hyder71.online </app/schema/${component}.js &>>${log_file}
+    status_check $?
+
+}
+
 nodejs() {
   print_head "configure nodejs repo"
   curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log_file}
@@ -72,17 +87,6 @@ nodejs() {
   systemctl restart ${component} &>>${log_file}
   status_check $?
 
-  print_head "copy mongodb repo file"
-  cp ${code_dir}/configs/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${log_file}
-  status_check $?
 
-
-  print_head "install mongo client"
-  yum install mongodb-org-shell -y &>>${log_file}
-  status_check $?
-
-  print_head "load schema"
-  mongo --host mongodb-dev.hyder71.online </app/schema/${component}.js &>>${log_file}
-  status_check $?
-
+ schema_setup
 }
