@@ -58,7 +58,8 @@ nodejs() {
 
   print_head "copy systemd service file"
   cp ${code_dir}/configs/${component}.service /etc/systemd/system/${component}.service &>>${log_file}
-  status_check
+  status_check $?
+
   print_head "reload systemd"
   systemctl daemon-reload &>>${log_file}
   status_check $?
