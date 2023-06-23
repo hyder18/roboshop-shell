@@ -146,7 +146,7 @@ python() {
 
 }
 
-golan() {
+golang() {
   print_head "install golang"
   yum install golang -y  &>>${log_file}
   status_check $?
