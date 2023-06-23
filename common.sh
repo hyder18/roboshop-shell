@@ -21,7 +21,7 @@ status_check() {
      status_check $?
 
      sed -i -e "s/ROBOSHOP_USER_PASSWORD/${roboshop_app_password}/" /etc/systemd/system/${component}.service &>>${log_file}
-
+     status_check $?
 
      print_head "reload systemd"
      systemctl daemon-reload &>>${log_file}
