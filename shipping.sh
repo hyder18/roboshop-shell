@@ -7,5 +7,5 @@ mysql_root_password=$1
  fi
 
 component=shipping
-schema_type=mysql
+schema_type="mysql"
 java
