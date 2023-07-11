@@ -4,7 +4,7 @@ Description = User Service
 User=roboshop
 Environment=MONGO=true
 Environment=REDIS_HOST=redis-dev.hyder71.online
-Environment=MONGO_URL="mongodb://mongodb-dev.hyder71.online:27017/users"
+Environment=MONGO_URL="mongodb://mongodb-dev.hyder71.0nline:27017/users"
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=user
 
